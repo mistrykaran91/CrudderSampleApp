@@ -1,0 +1,54 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div class='card-body'>
+
+    <div>
+      <button id="btnAdd" name="btnAdd" type="button" class="btn btn-primary" (click)="onAddClick()">
+        Add Customer </button>
+    </div>
+    <br>
+    <div class='table-responsive'>
+      <table class='table table-striped' *ngIf='customers && customers.length'>
+        <thead>
+          <tr>
+            <th>Customer Id</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let customer of customers'>
+            <td>
+              <a [routerLink]="['/customer', customer?.customerId]">
+                {{ customer?.customerId }}
+              </a>
+            </td>
+            <td>{{ customer?.firstName }}</td>
+            <td>{{ customer?.lastName }}</td>
+            <td>{{ customer?.age }}</td>
+            <td>{{ customer?.gender }}</td>
+            <td>{{ customer?.contactDetails?.phone }}</td>
+            <td>
+              <a class="btn btn-link" [routerLink]="['/customer/edit', customer?.customerId]">
+                Edit
+              </a>
+              &nbsp;&nbsp;
+              <a class="btn btn-link" (click)="onDeleteClick(customer)">
+                Delete
+              </a>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

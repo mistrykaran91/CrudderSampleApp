@@ -1,0 +1,69 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+</div>
+<form autocomplete="off" class="container card-body" [formGroup]="mainForm" novalidate>
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-xs-12 form-group required">
+      <label for="firstName">FirstName</label><input type="text" id="firstName" name="firstName" placeholder="FirstName"
+        class="form-control" formControlName="firstName" maxlength="10" />
+    </div>
+    <div class="col-lg-3 col-md-3 col-xs-12 form-group required">
+      <label for="lastName">LastName</label><input type="text" id="lastName" name="lastName" placeholder="LastName"
+        class="form-control" formControlName="lastName" maxlength="10" />
+    </div>
+    <div class="col-lg-3 col-md-3 col-xs-12 form-group required">
+      <label for="age">Age</label><input type="number" id="age" name="age" placeholder="Age" class="form-control"
+        formControlName="age" />
+    </div>
+    <div class="col-lg-3 col-md-3 col-xs-12 form-group required">
+      <label for="age">Gender</label>
+      <br>
+      <label class="radio-inline">
+        <input type="radio" name="gender" formControlName="gender" value="male">Male</label>
+      &nbsp;&nbsp;
+      <label class="radio-inline">
+        <input type="radio" name="gender" formControlName="gender" value="female">Female</label>
+
+    </div>
+    <legend>Contact Details</legend>
+    <ng-container formGroupName="contactDetails">
+      <div class="col-lg-3 col-md-3 col-xs-12 form-group">
+        <label for="phone">Phone</label><input type="text" id="phone" name="phone" placeholder="Phone"
+          class="form-control" formControlName="phone" />
+      </div>
+      <div class="col-lg-3 col-md-3 col-xs-12 form-group">
+        <label for="email">Email</label><input type="text" id="email" name="email" placeholder="Email"
+          class="form-control" formControlName="email" />
+      </div>
+      <legend>Address</legend>
+      <ng-container formGroupName="address">
+        <div class="col-lg-3 col-md-3 col-xs-12 form-group">
+          <label for="street1">Street1</label><input type="text" id="street1" name="street1" placeholder="Street1"
+            class="form-control" formControlName="street1" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-xs-12 form-group">
+          <label for="street2">Street2</label><input type="text" id="street2" name="street2" placeholder="Street2"
+            class="form-control" formControlName="street2" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-xs-12 form-group">
+          <label for="landmark">Landmark</label><input type="text" id="landmark" name="landmark" placeholder="Landmark"
+            class="form-control" formControlName="landmark" />
+        </div>
+        <div class="col-lg-3 col-md-3 col-xs-12 form-group">
+          <label for="pincode">Pincode</label><input type="text" id="pincode" name="pincode" placeholder="Pincode"
+            class="form-control" formControlName="pincode" />
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+  <div class="col-lg-3 col-md-3 col-xs-12 form-group">
+    <button id="btnAdd" name="btnAdd" type="button" class="btn btn-primary" (click)="onSaveClick()"
+      [disabled]="mainForm?.invalid">
+      Save </button>
+    &nbsp;&nbsp;
+    <button id="btnAdd" name="btnAdd" type="button" class="btn btn-secondary" (click)="onCancelClick()">
+      Cancel </button>
+  </div>
+</form>

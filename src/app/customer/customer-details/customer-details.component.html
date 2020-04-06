@@ -1,68 +1,99 @@
-<div class='card'>
-  <div class='card-header'>
-    {{pageTitle}}
+<div class="card">
+  <div class="card-header">
+    {{ pageTitle }}
   </div>
 </div>
 <div class="container card-body">
   <div class="row">
     <div class="col-lg-3 col-md-3 col-xs-12 form-group">
       <label for="firstName">FirstName</label>
-      <label class="form-control"> {{ customer?.firstName}}</label>
+      <label class="form-control"> {{ customer?.firstName }}</label>
     </div>
-    <div class="col-lg-3 col-md-3 col-xs-12 form-group required">
+    <div class="col-lg-3 col-md-3 col-xs-12 form-group">
       <label for="lastName">LastName</label>
-      <label class="form-control"> {{ customer?.lastName}}</label>
+      <label class="form-control"> {{ customer?.lastName }}</label>
     </div>
-    <div class="col-lg-3 col-md-3 col-xs-12 form-group required">
+    <div class="col-lg-3 col-md-3 col-xs-12 form-group">
       <label for="age">Age</label>
-      <label class="form-control"> {{ customer?.age}}</label>
+      <label class="form-control"> {{ customer?.age }}</label>
     </div>
-    <div class="col-lg-3 col-md-3 col-xs-12 form-group required">
+    <div class="col-lg-3 col-md-3 col-xs-12 form-group">
       <label for="age">Gender</label>
-      <label class="form-control"> {{ customer?.gender}}</label>
+      <label class="form-control"> {{ customer?.gender }}</label>
     </div>
     <legend>Contact Details</legend>
     <ng-container>
       <div class="col-lg-3 col-md-3 col-xs-12 form-group">
         <label for="phone">Phone</label>
-        <label class="form-control"> {{ customer?.contactDetails?.phone}}</label>
-
+        <label class="form-control">
+          {{ customer?.contactDetails?.phone }}</label
+        >
       </div>
       <div class="col-lg-3 col-md-3 col-xs-12 form-group">
         <label for="email">Email</label>
-        <label class="form-control"> {{ customer?.contactDetails?.email}}</label>
+        <label class="form-control">
+          {{ customer?.contactDetails?.email }}</label
+        >
       </div>
       <legend>Address</legend>
       <ng-container>
         <div class="col-lg-3 col-md-3 col-xs-12 form-group">
           <label for="street1">Street1</label>
-          <label class="form-control"> {{ customer?.contactDetails?.address?.street1}}</label>
-
+          <label class="form-control">
+            {{ customer?.contactDetails?.address?.street1 }}</label
+          >
         </div>
         <div class="col-lg-3 col-md-3 col-xs-12 form-group">
           <label for="street2">Street2</label>
-          <label class="form-control"> {{ customer?.contactDetails?.address?.street2}}</label>
+          <label class="form-control">
+            {{ customer?.contactDetails?.address?.street2 }}</label
+          >
         </div>
         <div class="col-lg-3 col-md-3 col-xs-12 form-group">
           <label for="landmark">Landmark</label>
-          <label class="form-control"> {{ customer?.contactDetails?.address?.landmark}}</label>
+          <label class="form-control">
+            {{ customer?.contactDetails?.address?.landmark }}</label
+          >
         </div>
         <div class="col-lg-3 col-md-3 col-xs-12 form-group">
           <label for="pincode">Pincode</label>
-          <label class="form-control"> {{ customer?.contactDetails?.address?.pincode}}</label>
+          <label class="form-control">
+            {{ customer?.contactDetails?.address?.pincode }}</label
+          >
         </div>
       </ng-container>
     </ng-container>
   </div>
-  <div class='card-footer'>
-    <button id="btnEdit" name="btnEdit" type="button" class="btn btn-primary" (click)="onEditClick()">
-      Edit </button>
+  <div class="card-footer">
+    <button
+      id="btnEdit"
+      name="btnEdit"
+      type="button"
+      class="btn btn-primary"
+      (click)="onEditClick()"
+    >
+      Edit
+    </button>
     &nbsp;&nbsp;
 
-    <button id="btnDelete" name="btnDelete" type="button" class="btn btn-danger" (click)="onDeleteClick()">
-      Delete </button>
+    <button
+      id="btnDelete"
+      name="btnDelete"
+      type="button"
+      class="btn btn-danger"
+      (click)="onDeleteClick()"
+    >
+      Delete
+    </button>
     &nbsp;&nbsp;
-    <button id="btnAdd" name="btnAdd" type="button" class="btn btn-secondary" (click)="onCancelClick()">
-      Cancel </button>
+    <button
+      id="btnAdd"
+      name="btnAdd"
+      type="button"
+      class="btn btn-secondary"
+      (click)="onCancelClick()"
+    >
+      Cancel
+    </button>
   </div>
 </div>
